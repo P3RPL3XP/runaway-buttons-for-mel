@@ -104,7 +104,7 @@ function RunawayButton({ label, reverse = false }: { label: "YES" | "NO"; revers
       { x: 60, y: 42, rotate: 5 },
       { x: -48, y: -38, rotate: -5 },
     ];
-    setPosition(sequence[attempts.current % sequence.length]);
+    setPosition(sequence[attempts.current % sequence.length] ?? sequence[0] ?? { x: 0, y: 0, rotate: 0 });
     setMessageIndex((current) => (current + 1) % teasingLines.length);
   };
 
